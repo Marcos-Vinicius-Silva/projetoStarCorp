@@ -1,0 +1,13 @@
+.tb {
+    text-align: center;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.titulo {
+    text-align: center;
+    font-size: 2.9rem;
+}
+.lgs {
+    width: 50px;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="times">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSA</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="./node_modules/angular/angular.js"></script>
+    <script src="./node_modules/angular/angular.min.js"></script>
+    <link rel="stylesheet" href="./libs/css/index.css">
+</head>
+<body ng-controller="timesCtrl">
+    <div style="display: none;">
+        <div id="compet">2017</div>
+        <div id="idtimes">PPL</div>
+    </div>
+    <h1 class="titulo">{{teamsOfSoccer.competition.name}}</h1>
+    <h2 class="titulo" ng-controller="campeonatoCtrl">Time vencedor: {{campOfSoccer.currentSeason.winner}}</h2>
+    
+    <div >
+        <table class="table tb table-striped table-hover">
+            <tr class="table-dark">
+                <td></td>
+                <td>Times</td>
+                <td>Pais</td>
+            </tr>
+            <tr scope="row" ng-repeat="todosTimes in teamsOfSoccerTeams">
+                <td scope="col" ><img class="lgs" ng-src="{{todosTimes.crestUrl || './libs/img/bola-6.png'}}"></td>
+                <td scope="row">{{todosTimes.name}}</td>
+                <td scope="col">{{todosTimes.area.name}}</td>
+            </tr>
+    </table>
+    </div>
+    <script src="./libs/angular/clAngular.js"></script>
+</body>
+</html>

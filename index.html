@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="campeonatos">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project StarCorp</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./libs/css/index.css">
+    <script src="./node_modules/angular/angular.js"></script>
+    <script src="./node_modules/angular/angular.min.js"></script>
+    <script src="./libs/angular/mainAngular.js"></script>
+</head>
+<body>
+    <h1 class="titulo">Campeonatos disponiveis</h1>
+    <section>
+        <table class="table tb table-striped table-hover" >
+            <tr class="table-dark">
+                <td scope="col" class="lgs">Logo</td>
+                <td scope="col">Nome</td>
+                <td scope="col">Inicio</td>
+                <td scope="col">Fim</td>
+                <td scope="col">Pais</td>
+                <td scope="col"><a href=""></a></td>
+            </tr>
+            <tr ng-controller="campeonatosCtrl">
+                <td scope="row"><img class="lgs" ng-src="{{campeonato1.emblemUrl}}"></td>
+                <td scope="row">{{campeonato1.name}}</td>
+                <td scope="row">{{formatarDatas(campeonato1.currentSeason.startDate)}}</td>
+                <td scope="row">{{formatarDatas(campeonato1.currentSeason.endDate)}}</td>
+                <td scope="row">{{campeonato1.area.name}}</td>
+                <td scope="row"><a href="BSA.html">Detalhes</a></td>
+            </tr>
+            <tr  ng-controller="campeonatosCtrl">
+                <td scope="row"><img class="lgs" ng-src="{{campeonato2.emblemUrl}}"></td>
+                <td scope="row">{{campeonato2.name}}</td>
+                <td scope="row">{{formatarDatas(campeonato2.currentSeason.startDate)}}</td>
+                <td scope="row">{{formatarDatas(campeonato2.currentSeason.endDate)}}</td>
+                <td scope="row">{{campeonato2.area.name}}</td>
+                <td scope="row"><a href="CL.html">Detalhes</a></td>
+            </tr>
+            <tr ng-controller="campeonatosCtrl">
+                <td scope="row"><img class="lgs" ng-src="{{campeonato3.emblemUrl || './libs/img/bola-6.png'}}"></td>
+                <td scope="row">{{campeonato3.name}}</td>
+                <td scope="row">{{formatarDatas(campeonato3.currentSeason.startDate)}}</td>
+                <td scope="row">{{formatarDatas(campeonato3.currentSeason.endDate)}}</td>
+                <td scope="row">{{campeonato3.area.name}}</td>
+                <td scope="row"><a href="PPL.html">Detalhes</a></td>
+            </tr>
+        </table>
+    </section>
+    
+</body>
+</html>
